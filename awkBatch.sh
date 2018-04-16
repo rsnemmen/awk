@@ -1,11 +1,13 @@
 #!/bin/sh
 #
-# Applies awk pattern matching to all specified files in current dir.
+# Applies the given awk pattern matching to all specified files 
+# in current dir.
 #
 # ./awkBatch.sh <awk pattern> <extension>
 #
 # Example:
-#     ./awkBatch.sh /p[/ c
+#     ./awkBatch.sh /void/ c
+# lists all instances of lines with "void" in *.c files in current dir.
 
 # colors and boldface, cf. https://stackoverflow.com/a/20983251/793218
 fmt=`tput bold`
