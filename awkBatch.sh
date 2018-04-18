@@ -9,6 +9,13 @@
 #     ./awkBatch.sh /void/ c
 # lists all instances of lines with "void" in *.c files in current dir.
 
+# check if there were command-line arguments
+if [ $# -eq 0 ]; then
+    echo "Usage: "
+    echo "  awkBatch.sh <awk pattern> <file extension to apply, without .> "
+    exit 1
+fi
+
 # colors and boldface, cf. https://stackoverflow.com/a/20983251/793218
 fmt=`tput bold`
 reset=`tput sgr0`
