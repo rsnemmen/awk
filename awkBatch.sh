@@ -23,6 +23,8 @@ reset=`tput sgr0`
 for X in `ls *.$2`
     do
     	echo "${fmt}$X ${reset}"
-    	awk $1 $X
+    	#awk $1 $X # only prints matching lines
+    	awk "$1 {gsub(/^[ \t]+/,\"\", \$0); print NR, \$0}" $X # trim leading spaces from lines
     	echo
     done
+
